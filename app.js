@@ -14,11 +14,10 @@ var port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-bookRouter = require ('.Routes/bookRoutes')(Book);
+bookRouter = require ('./Routes/bookRoutes')(Book);
 
 
 app.use('/api/books', bookRouter);
-app.use('/api/authors', authorRouter);
 
 
 app.get('/', function(req, res){
